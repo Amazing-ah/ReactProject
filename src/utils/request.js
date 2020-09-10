@@ -41,3 +41,12 @@ export const reqIndexList = () => {
         method: 'get'
     })
 }
+
+/* 商品详情 */
+export const reqGoodsInfo = (params) => {
+    return axios({
+        url: '/api/getgoodsinfo',
+        method: 'get',
+        params: params
+    })
+}

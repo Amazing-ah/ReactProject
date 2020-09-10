@@ -6,13 +6,8 @@ const Login = asyncComponent(() => import('./pages/login/login'))
 const Register = asyncComponent(() => import('./pages/register/register'))
 const Index = asyncComponent(() => import('./pages/index/index'))
 const MyRouter = asyncComponent(() => import('./utils/MyRouter'))
-// import Login from './pages/login/login'
-// import Register from './pages/register/register'
-// import Index from './pages/index/index'
-// import MyRouter from './utils/MyRouter';
-
-
-
+const Detail = asyncComponent(() => import('./pages/details/details'))
+// const ListDetail = asyncComponent(() => import('./pages/listDetail/listDetail'))
 
 function App() {
   return (
@@ -21,7 +16,11 @@ function App() {
       <Switch>
         <Route path='/login' component={Login}></Route>
         <Route path='/logon' component={Register} ></Route>
+
         <MyRouter path='/index' component={Index} ></MyRouter>
+        <MyRouter path='/detail/:id' component={Detail}></MyRouter>
+        {/* <ListDetail path='/listDetail'></ListDetail> */}
+        {/* 重定向 */}
         <Redirect to='/login'></Redirect>
 
       </Switch>

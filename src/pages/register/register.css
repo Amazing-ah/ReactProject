@@ -1,0 +1,51 @@
+.logon {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logon_form {
+    flex: 1;
+}
+
+.logon_form ul {
+    width: 100%;
+    height: 100%;
+}
+
+.logon_form input {
+    width: 100%;
+    height: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.logon_form ul li:first-child {
+    padding-top: 1rem;
+
+}
+
+.logon_form ul li {
+    margin: 0 0.7rem;
+}
+
+.logon_li {
+    margin-top: 0.2rem;
+}
+
+.logon_form ul li button {
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0.2rem;
+    background-color: #ff9621;
+    border: none;
+    outline: none;
+}
+
+.logon_form ul .logon_button {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,75 @@
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    height: 45%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 0 0.2rem;
+}
+
+.pic {
+    display: flex;
+    height: 2.5rem;
+    padding-top: 0.15rem;
+}
+
+.pic div:first-child {
+    flex: 1;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.pic div img {
+    width: 100%;
+    height: 100%;
+}
+
+.pic div:last-child {
+    flex: 2;
+    font-size: 0.6rem;
+}
+
+.title {
+    font-size: 0.4rem;
+    font-weight: bold;
+}
+
+.cate {
+    display: flex;
+    margin-top: 0.1rem;
+}
+
+.cate p {
+    border: 1px solid #000;
+    margin-left: 0.2rem;
+    width: 1rem;
+    height: 0.6rem;
+    text-align: center;
+    line-height: 0.6rem;
+}
+
+.end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.3rem;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.end button {
+    width: 3rem;
+    height: 1.5rem;
+    font-size: 0.4rem;
+    background-color: #ffa724;
+
+}

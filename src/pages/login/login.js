@@ -26,9 +26,12 @@ export default class Login extends Component {
 
     login() {
         reqLogin(this.state.user).then(res => {
+            console.log(res);
             if (res.data.code === 200) {
                 sessionStorage.setItem("isLogin", 1)
+                sessionStorage.setItem('uid', res.data.list.uid)
                 this.props.history.push('/index')
+                sessionStorage.setItem('token', res.data.list.token)
             } else {
                 alert(res.data.msg)
             }

@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
 import buy from '../../../assets/img/img/cart_on.png'
 export default class DetailText extends Component {
-
     constructor() {
         super()
         this.state = {
             data: {},
             description: ''
         }
-
-
     }
 
     componentDidMount() {
         const { info } = this.props
-        console.log(info);
-
         this.setState({
             data: info[0],
             description: info[0].description
@@ -23,17 +18,9 @@ export default class DetailText extends Component {
 
     }
     render() {
-        console.log(this.state.data);
-        console.log(this.state.description);
-        // const { info } = this.props
-        // let data = info[0];
-        // if (this.refs.box) {
-        //     this.refs.box.innerHTML = data.description
-        // }
         let { data, description } = this.state
         if (this.refs.box) {
             this.refs.box.innerHTML = description
-
         }
 
         return (

@@ -2,6 +2,23 @@ import axios from 'axios'
 import qs from 'qs'
 
 
+//请求拦截
+axios.interceptors.request.use(config => {
+    //从本地仓库取出token
+    const token = sessionStorage.getItem("token")
+    //如果去的是login和register不需要携带请求头直接return
+    if (config.url === "http://localhost:3000/api/login" && config.url === "http://localhost:3000/api/register") {
+        return config
+    }
+    //去的是其他页面则携带请求头
+    config.headers.authorization = token
+    return config;
+
+
+    // config.headers.authorization = store.state.user.info.token;
+    // return config;
+})
+
 axios.interceptors.response.use(res => {
     console.group("=======请求地址：" + res.config.url + "=============")
     console.log(res);
@@ -48,5 +65,14 @@ export const reqGoodsInfo = (params) => {
         url: '/api/getgoodsinfo',
         method: 'get',
         params: params
+    })
+}
+
+/* 商品添加 */
+export const reqCarAdd = (form) => {
+    return axios({
+        url: "/api/cartadd",
+        method: "post",
+        data: qs.stringify(form)
     })
 }

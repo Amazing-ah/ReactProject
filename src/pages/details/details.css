@@ -100,3 +100,87 @@
 .detail_end {
     margin-bottom: 1.2rem;
 }
+
+.PopCate {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    touch-action: none;
+}
+
+.PopCate_footer {
+    width: 100%;
+    height: 45%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 0 0.2rem;
+}
+
+.PopCate_pic {
+    display: flex;
+    height: 2.5rem;
+    padding-top: 0.15rem;
+}
+
+.PopCate_pic div:first-child {
+    flex: 1;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.PopCate_pic div img {
+    width: 100%;
+    height: 100%;
+}
+
+.PopCate_pic div:last-child {
+    flex: 2;
+    font-size: 0.6rem;
+}
+
+.PopCate_title {
+    font-size: 0.4rem;
+    font-weight: bold;
+}
+
+.PopCate_cate {
+    display: flex;
+    margin-top: 0.1rem;
+}
+
+.PopCate_cate p {
+    border: 1px solid #000;
+    margin-left: 0.2rem;
+    width: 1rem;
+    height: 0.6rem;
+    text-align: center;
+    line-height: 0.6rem;
+}
+
+.PopCate_end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.3rem;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+.PopCate_end button {
+    width: 3rem;
+    height: 1rem;
+    font-size: 0.4rem;
+    background-color: #ffa724;
+    border: none;
+    outline: none;
+}
+
+.borderChange {
+    border: 1px solid #ff9621 !important;
+}

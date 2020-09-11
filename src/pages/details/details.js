@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../../components/header/Header'
 import DetailText from './components/DetailText'
+import PopCate from './components/PopCate'
 import './details.css'
 import { reqGoodsInfo } from '../../utils/request';
 export default class details extends Component {
@@ -10,7 +11,8 @@ export default class details extends Component {
     constructor() {
         super()
         this.state = {
-            data: []
+            data: [],
+            isShow: false
         }
     }
     componentDidMount() {
@@ -23,8 +25,14 @@ export default class details extends Component {
 
     }
 
+    goPopCate() {
+        this.setState({
+            isShow: true
+        })
+    }
+
     render() {
-        let { data } = this.state
+        let { data, isShow } = this.state
         return (
             <div className='details'>
                 <Header title='商品详情' back></Header>
@@ -34,10 +42,14 @@ export default class details extends Component {
 
                 <div className="details_footer">
                     <div></div>
-                    <div>
+                    <div onClick={() => this.goPopCate()}>
                         加入购物车
                     </div>
                 </div>
+                {
+                    isShow ? <PopCate info={data}></PopCate> : null
+                }
+
             </div>
         )
     }

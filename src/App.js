@@ -7,6 +7,7 @@ const Register = asyncComponent(() => import('./pages/register/register'))
 const Index = asyncComponent(() => import('./pages/index/index'))
 const MyRouter = asyncComponent(() => import('./utils/MyRouter'))
 const Detail = asyncComponent(() => import('./pages/details/details'))
+
 // const ListDetail = asyncComponent(() => import('./pages/listDetail/listDetail'))
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
         <MyRouter path='/index' component={Index} ></MyRouter>
         <MyRouter path='/detail/:id' component={Detail}></MyRouter>
+
         {/* <ListDetail path='/listDetail'></ListDetail> */}
         {/* 重定向 */}
         <Redirect to='/login'></Redirect>

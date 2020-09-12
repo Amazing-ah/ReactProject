@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import './cate.css'
 import Header from '../../components/header/Header'
-import { reqCateTree, reqGetGoods } from '../../utils/request'
+import { reqCateTree } from '../../utils/request'
 export default class Cate extends Component {
-    /* 
-    TODO
-   加载商品详情
-     */
+
     constructor() {
         super()
         this.state = {
@@ -32,6 +29,9 @@ export default class Cate extends Component {
         })
     }
 
+    getGoodsList(id, name) {
+        this.props.history.push('/listDetail/' + id + '/' + name)
+    }
 
 
     render() {
@@ -61,10 +61,13 @@ export default class Cate extends Component {
                             {/* 渲染goods */}
 
                             {
-                                list.map(item => (<li key={item.id}>  <div className='pic'>
-                                    <img src={item.img} alt="" />
-                                </div>
-                                    <div className='picTitle'> {item.catename}</div> </li>))
+                                list.map(item => (
+                                    <li key={item.id} onClick={() => { this.getGoodsList(item.id, item.catename) }}>
+                                        <div className='pic'>
+                                            <img src={item.img} alt="" />
+                                        </div>
+                                        <div className='picTitle'> {item.catename}</div>
+                                    </li>))
                             }
                         </ul>
                     </div>

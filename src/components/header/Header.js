@@ -10,7 +10,7 @@ import { withRouter } from "react-router-dom";
 class Header extends Component {
 
     goBack() {
-        this.props.history.goBack()
+        this.props.history.go(-1)
     }
     goLogon() {
         this.props.history.push("/logon")

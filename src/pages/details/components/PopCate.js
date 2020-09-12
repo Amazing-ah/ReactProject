@@ -29,7 +29,6 @@ export default class PopCat extends Component {
         const { hide } = this.props
         user.uid = sessionStorage.getItem('uid')
         user.goodsid = id;
-        console.log(hide);
 
         reqCarAdd(user).then(res => {
             if (res.data.code === 200) {
@@ -43,7 +42,7 @@ export default class PopCat extends Component {
     }
 
     render() {
-        const { info, hide } = this.props;
+        const { info } = this.props;
 
         const { n } = this.state
         let data = info[0]

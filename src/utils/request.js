@@ -76,3 +76,19 @@ export const reqCarAdd = (form) => {
         data: qs.stringify(form)
     })
 }
+/* 分类树形结构 */
+export const reqCateTree = () => {
+    return axios({
+        url: '/api/getcatetree',
+        method: 'get',
+    })
+}
+
+/* 获取分类商品 */
+export const reqGetGoods = (fid) => {
+    return axios({
+        url: '/api/getgoods',
+        method: 'get',
+        params: fid
+    })
+}

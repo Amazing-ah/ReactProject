@@ -1,32 +1,23 @@
 import React, { Component } from 'react'
 import { reqCarAdd } from '../../../utils/request'
+import { Toast } from 'antd-mobile';
 export default class PopCat extends Component {
     constructor() {
         super()
         this.state = {
-            // user: {
-            //     uid: '',
-            //     goodsid: '',
-            //     num: 1,
-            // },
-
             n: ''
 
         }
     }
+
     changeColor(index) {
         this.setState({
             n: index
         })
     }
-    /* 
-     TODO
-    button 添加 请求reqCarAdd
-    需要
-    uid  待解决
-    goodsid
-    num
-     */
+    successToast() {
+        Toast.success('添加成功', 1);
+    }
 
 
     carAdd(id) {
@@ -35,17 +26,25 @@ export default class PopCat extends Component {
             goodsid: '',
             num: 1,
         }
+        const { hide } = this.props
         user.uid = sessionStorage.getItem('uid')
         user.goodsid = id;
-        console.log(user);
+        console.log(hide);
 
-        reqCarAdd(user)
+        reqCarAdd(user).then(res => {
+            if (res.data.code === 200) {
+                this.successToast()
+                hide()
+            }
+        })
+
 
 
     }
 
     render() {
-        const { info } = this.props;
+        const { info, hide } = this.props;
+
         const { n } = this.state
         let data = info[0]
         //  传子组件 img goodsname specsattr specsattr

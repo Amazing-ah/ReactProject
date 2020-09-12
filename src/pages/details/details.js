@@ -31,6 +31,12 @@ export default class details extends Component {
         })
     }
 
+    hide() {
+        this.setState({
+            isShow: false
+        })
+    }
+
     render() {
         let { data, isShow } = this.state
         return (
@@ -47,7 +53,7 @@ export default class details extends Component {
                     </div>
                 </div>
                 {
-                    isShow ? <PopCate info={data}></PopCate> : null
+                    isShow ? <PopCate info={data} hide={() => this.hide()}></PopCate> : null
                 }
 
             </div>

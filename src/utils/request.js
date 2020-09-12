@@ -15,8 +15,8 @@ axios.interceptors.request.use(config => {
     return config;
 
 
-    // config.headers.authorization = store.state.user.info.token;
-    // return config;
+
+
 })
 
 axios.interceptors.response.use(res => {

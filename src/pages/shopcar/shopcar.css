@@ -1,92 +1,128 @@
-.shopCar {
+.ShopCar {
     width: 100vw;
     height: 100vh;
-    background-color: #fafafa;
     position: relative;
 }
 
+.hide {
+    display: none !important;
+}
 
-.shopCar_top {
+.ShopCar_Main:last-child {
+    margin-bottom: 2.8rem;
+}
+
+.ShopCar_address {
+    width: 100%;
+    height: 1rem;
     display: flex;
-    margin: 0.2rem;
 }
 
-.shopCar_top img {
-    width: 0.45rem;
-    height: 0.45rem;
-}
-
-.shopCar_top p {
-    margin-left: 0.3rem;
-}
-
-.shopCar_text {
+.ShopCar_address div:first-child {
+    flex: 1;
     display: flex;
-    margin: 0.2rem 0.2rem;
-}
-
-.shopCar_text>div {
-    display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
 
+.ShopCar_address div:last-child {
+    flex: 4;
+    display: flex;
+    align-items: center;
 
-.shopCar_text .shopCar_right {
-    margin-left: 0.3rem;
 }
 
-.shopCar_text .shopCar_right ul {
+.ShopCar_text {
+    width: 100%;
+    height: 2rem;
     display: flex;
 }
 
-.shopCar_text .shopCar_right img {
-    width: 2rem;
-    height: 2rem;
+.carCheck {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.shopCar_right ul li:nth-child(2) {
-    margin-left: 0.2rem;
+.carImg {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.shopCar_right ul li:last-child {
-    margin-left: 0.2rem;
+.carImg img {
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
-.shopCar_buy {
+.carNum {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.carNum p {
+    flex: 1;
+}
+
+.carNum p:nth-child(2) button {
+    width: 1rem;
+    height: 100%;
+    outline: none;
+}
+
+.carMoney {
+    flex: 1;
+}
+
+.carDel {
+    flex: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: #ffa724;
+}
+
+
+.ShopCar_footer {
     width: 100%;
     height: 1.5rem;
     position: fixed;
     left: 0;
-    bottom: 1.5rem;
+    bottom: 1.3rem;
     border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    background-color: #fff;
 }
 
-.shopCar_buy ul {
+.ShopCar_footer ul {
     width: 100%;
     height: 100%;
     display: flex;
 }
 
-.shopCar_buy ul li {
+.ShopCar_footer ul li {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.shopCar_buy ul li:nth-child(3) {
-    font-size: 0.12rem;
+.ShopCar_footer ul li div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.shopCar_buy ul li:last-child {
-    background-color: #ffa724;
+
+
+.ShopCar_buy {
     color: #fff;
-}
-
-.shopCar_buy img {
-    width: 0.45rem;
-    height: 0.45rem;
+    background-color: #ffa724;
+    font-size: 0.4rem;
 }

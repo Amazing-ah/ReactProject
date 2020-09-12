@@ -3,7 +3,11 @@ import './listDetail.css'
 import List from './components/list'
 import Header from '../../components/header/Header'
 import { reqGetGoods } from '../../utils/request'
-
+/* 
+FIXME
+返回直接返回到第一个
+cate。js
+ */
 export default class ListDetail extends Component {
     constructor() {
         super()

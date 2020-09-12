@@ -10,6 +10,7 @@ const Detail = asyncComponent(() => import('./pages/details/details'))
 
 const ListDetail = asyncComponent(() => import('./pages/listDetail/listDetail'))
 
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
           component={Detail}></MyRouter>
         {/* 商品列表 */}
         <MyRouter path='/listDetail/:id/:name' component={ListDetail} ></MyRouter>
+
         {/* 重定向 */}
         <Redirect to='/login'></Redirect>
 

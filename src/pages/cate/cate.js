@@ -5,8 +5,7 @@ import { reqCateTree, reqGetGoods } from '../../utils/request'
 export default class Cate extends Component {
     /* 
     TODO
-    页面一加载，
-    直接请求第一个列表的goods
+   加载商品详情
      */
     constructor() {
         super()
@@ -20,25 +19,16 @@ export default class Cate extends Component {
         reqCateTree().then(res => {
             this.setState({
                 ...this.state,
-                catename: res.data.list
+                catename: res.data.list,
             })
-
-            reqGetGoods({ fid: res.data.list[0].id }).then(res => {
-                this.setState({
-                    ...this.state,
-                    list: res.data.list
-                })
-            })
+            this.getGoods(0)
         })
-
-
     }
-    getGoods(id) {
-        reqGetGoods({ fid: id }).then(res => {
-            this.setState({
-                ...this.state,
-                list: res.data.list
-            })
+
+    getGoods(index) {
+        this.setState({
+            ...this.state,
+            list: this.state.catename[index].children
         })
     }
 
@@ -56,9 +46,9 @@ export default class Cate extends Component {
                         <ul>
                             {/* 循环state */}
                             {
-                                catename.map((item) => {
+                                catename.map((item, index) => {
                                     // 点击获取goods
-                                    return (<li key={item.id} onClick={() => { this.getGoods(item.id) }} >{item.catename} </li>)
+                                    return (<li key={item.id} onClick={() => { this.getGoods(index) }} >{item.catename} </li>)
 
                                 })
 
@@ -69,22 +59,13 @@ export default class Cate extends Component {
                     <div className="cate_man_right">
                         <ul>
                             {/* 渲染goods */}
+
                             {
-                                list.map(item => (
-                                    <li key={item.id}>
-                                        <div className='pic'>
-                                            <img src={item.img} alt="" />
-                                        </div>
-                                        <div className='picTitle'> {item.goodsname}</div>
-                                    </li>))
-
+                                list.map(item => (<li key={item.id}>  <div className='pic'>
+                                    <img src={item.img} alt="" />
+                                </div>
+                                    <div className='picTitle'> {item.catename}</div> </li>))
                             }
-
-                            {/* <li>
-                                <div className='pic'></div>
-                                <div className='picTitle'> 电视</div>
-                            </li> */}
-
                         </ul>
                     </div>
                 </div>

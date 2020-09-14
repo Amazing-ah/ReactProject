@@ -59,7 +59,6 @@ export default function Text(props) {
                     <button>{item.num}</button>
                     <button onClick={() => addNum(item.id)}>+</button>
                   </p>
-                  {/* FIXME  按钮点击后，总价还在，check取消 */}
                   <p>
                     总价：<span>{priceFilter(item.num * item.price)}</span>
                   </p>

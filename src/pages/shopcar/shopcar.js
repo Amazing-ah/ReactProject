@@ -27,14 +27,17 @@ export default class ShopCar extends Component {
   componentDidMount() {
     const uid = sessionStorage.getItem("uid");
     reqShopCarList({ uid: uid }).then((res) => {
-      res.data.list.map((item) => {
-        item.isCheck = false;
-      });
+      // console.log(res.data.list.length);
+      if (res.data.list !== null) {
+        res.data.list.map((item) => {
+          item.isCheck = false;
+        });
 
-      this.setState({
-        ...this.state,
-        list: res.data.list,
-      });
+        this.setState({
+          ...this.state,
+          list: res.data.list,
+        });
+      }
     });
   }
   // addNUM
@@ -46,9 +49,11 @@ export default class ShopCar extends Component {
     };
     reqShopCarChange(num);
     reqShopCarList({ uid: uid }).then((res) => {
+      console.log(res);
       this.setState({
         ...this.state,
         list: res.data.list,
+        allNumber: 0,
       });
     });
   }
@@ -65,6 +70,7 @@ export default class ShopCar extends Component {
       this.setState({
         ...this.state,
         list: res.data.list,
+        allNumber: 0,
       });
     });
   }
@@ -112,20 +118,24 @@ export default class ShopCar extends Component {
 
   // every
   allCheck() {
-    let a = this.state.list.map((item) => {
-      return item.isCheck === true ? true : false;
-    });
-    return a.every((item) => item === true);
+    if (this.state.list.length > 0) {
+      let a = this.state.list.map((item) => {
+        return item.isCheck === true ? true : false;
+      });
+      return a.every((item) => item === true);
+    }
   }
   // 全选
   checkedAll(isAll) {
     this.state.list.map((item) => {
+      console.log(item);
       item.isCheck = !isAll;
+      this.state.allNumber += item.price * item.num;
     });
 
     this.setState({
       list: this.state.list,
-      addAllNum: this.state.allNumber,
+      allNumber: !isAll ? this.state.allNumber : 0.0,
     });
   }
 

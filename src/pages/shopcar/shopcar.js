@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ShopCar.css";
+import "./shopcar.css";
 import { Toast } from "antd-mobile";
 
 import Header from "../../components/header/Header";

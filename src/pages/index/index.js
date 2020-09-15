@@ -9,7 +9,7 @@ import "../../components/header/Header";
 // 二级路由引入
 import Home from "../home/Home";
 import Cate from "../cate/cate";
-import ShopCar from "../ShopCar/ShopCar";
+import ShopCar from "../shopcar/shopcar";
 import Me from "../me/Me";
 
 // footer 图片
